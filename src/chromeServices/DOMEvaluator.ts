@@ -1,5 +1,5 @@
 import { DOMMessage, DOMMessageResponse } from "../types";
-import isTextInput from "./DOMEDetectLogInPage";
+// import categoryUrl from "./DOMEDetectLogInPage";
 
 const messagesFromReactAppListener = (
   msg: DOMMessage,
@@ -20,9 +20,10 @@ const messagesFromReactAppListener = (
       }
     });
     const filterArr = outPutArr.filter((item) => item);
-    const response: DOMMessageResponse = {
+    const response: any = {
       title: document.title,
       headlines: filterArr,
+      url: msg,
     };
 
     console.log("[content.js]. Message response", response);
